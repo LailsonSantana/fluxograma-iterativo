@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    
+}
+.grade {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 10px; /* Adiciona um padding interno */ 
+}
+
+.semestre {
+  
+    padding: 5px;
+    text-align: center;
+    
+}
+
+.semestre h2 {
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.titulo{
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.maint{
+    display: flex;
+    justify-items: center;
+    font-size: 1.9em;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.disciplina {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 125px;
+    height: 70px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+
+.disciplina:hover {
+    border: 1px solid #ddd;
+    background-color: #8d9beb;
+
+}
+
+.highlight {
+    background-color: #cce5ff;
+}
