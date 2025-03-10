@@ -99,6 +99,7 @@
           <div class="disciplina" id="emp"> Empreendedorismo</div>
           <div class="disciplina" id="sd">Sistemas Distribuidos</div>
         </div>
+        
         <div class="semestre">
           <h2>7º SEM</h2>
           <div class="disciplina" id="ts1" data-related="ts2">Trabalho Supervisionado I</div>
@@ -110,7 +111,23 @@
           <div class="disciplina" id="ts2">Trabalho Supervisionado II</div>
         </div>
       </div>
+
+      <div >
+        <div class="info">
+          <span>Disciplina Selecionada : </h3>
+          <span id="selected">Nenhuma</span>
+        </div>
+  
+        <div class="info">
+          <span>Requisito para : </span>
+          <span id="relatedSel">Nenhuma</span>
+        </div>
+      </div>
+
     </section>
+
+    
+
   
   </body>
 
@@ -122,15 +139,22 @@
         .querySelectorAll(".disciplina")
         .forEach((item) => item.classList.remove("highlight"));
 
+      document.getElementById("selected").textContent = disciplina.textContent;
+
       // Obtém os IDs relacionados
       const relatedIds = disciplina.getAttribute("data-related");
       if (relatedIds) {
+        const relatedNames = [];
         relatedIds.split(",").forEach((id) => {
           const relatedDisciplina = document.getElementById(id);
           if (relatedDisciplina) {
             relatedDisciplina.classList.add("highlight");
+            relatedNames.push(relatedDisciplina.textContent);
           }
         });
+        if (relatedNames.length > 0) {
+          relatedSel.textContent = relatedNames.join(", ");
+        }
       }
     }
 
